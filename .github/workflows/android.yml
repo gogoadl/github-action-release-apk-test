@@ -6,15 +6,11 @@ on:
       - main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
   tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # Necessary to access local action
       - name: Local Action Call
-        uses: .github/workflows/test.yml@master
+        uses: ./.github/workflows/test.yml
         with:
           who-to-greet: test
