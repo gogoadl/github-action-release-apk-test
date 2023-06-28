@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: github-action-release-apk
-      uses: gogoadl/github-action-release-apk@v1.0.0-alpha
+      uses: ./.github/workflows/test.yml
       with:
         who-to-greet: test
        # 값을 잘 가져오는지 확인할게요.
