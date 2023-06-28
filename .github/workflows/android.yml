@@ -11,6 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
   tests:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # Necessary to access local action
       - name: Local Action Call
