@@ -11,18 +11,18 @@ inputs:
     required: true
     default: 'World'
 
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
-
 runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
       shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash          
-    - run: goodbye.sh
-      shell: bash 
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
+      shell: bash
+    - name: Upload Debug APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: apk
+        path: app/build/outputs/apk/debug/*.apk
