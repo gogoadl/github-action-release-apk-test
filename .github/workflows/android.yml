@@ -11,6 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
   tests:
-    uses: .github/workflows/test.yml
-    with:
-      who-to-greet: test
+    steps:
+      - uses: actions/checkout@v3 # Necessary to access local action
+      - name: Local Action Call
+        uses: .github/workflows/test.yml
+        with:
+          who-to-greet: test
