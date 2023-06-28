@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.github_action_release_apk_test.ui.theme.GithubactionreleaseapktestTheme
- 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,4 +43,4 @@ fun GreetingPreview() {
     GithubactionreleaseapktestTheme {
         Greeting("Android")
     }
-}
+} 
