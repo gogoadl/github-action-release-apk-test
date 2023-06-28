@@ -1,0 +1,12 @@
+name: Android CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/checkout@v3
