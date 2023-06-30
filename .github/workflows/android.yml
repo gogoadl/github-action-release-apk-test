@@ -17,4 +17,4 @@ jobs:
       - name: github-action-release-apk
         uses: ./.github/actions
         with:
-          asset-name: "test.apk"
+          asset-name: ${{ secrets.TEST }}
