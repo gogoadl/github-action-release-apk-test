@@ -45,11 +45,11 @@ runs:
         java-version: '17'
         distribution: 'temurin'
         cache: gradle
+
+      if: ${{ inputs.debug == true }}
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       shell: bash
-
-      if: ${{ inputs.debug == true }}
     - name: Build Debug APK
       run: ./gradlew assembleDebug
       shell: bash
@@ -60,6 +60,9 @@ runs:
         path: app/build/outputs/apk/debug/*.apk
         
       if: ${{ inputs.debug == false }}
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      shell: bash
     - name: Build Release APK
       run: ./gradlew assembleRelease
       shell: bash
