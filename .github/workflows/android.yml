@@ -11,6 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3 # Necessary to access local action
       - name: github-action-release-apk
-        uses: gogoadl/github-action-release-apk@v1.0.0-alpha01
-        with:
-          who-to-greet: test
+        uses: gogoadl/github-action-release-apk@v1.0.0-alpha02
